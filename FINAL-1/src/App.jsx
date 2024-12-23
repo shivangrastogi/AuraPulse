@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaEye, FaEyeSlash } from "react-icons/fa";
-
 function App() {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
