@@ -1,28 +1,65 @@
+
 import React from "react";
-import { Link } from "react-router-dom";  // Import Link for navigation
-import SocialLogin from "./SocialLogin";
-import InputField from "./InputField";
+import "./Login.css";
 
 const Login = () => {
   return (
     <div className="login-container">
-      <h2 className="form-title">Log in with</h2>
-      <SocialLogin />
+      <div className="login-form">
+        <h1 className="form-title">Welcome Back</h1>
+        <p className="form-subtitle">
+          Please sign in to your account and start your adventure
+        </p>
 
-      <p className="separator">
-        <span>or</span>
-      </p>
+        <form>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-      <form action="#" className="login-form">
-        <InputField type="email" placeholder="Email address" icon="mail" />
-        <InputField type="password" placeholder="Password" icon="lock" />
-        <a href="#" className="forgot-password-link">Forgot password?</a>
-        <button type="submit" className="login-button">Log In</button>
-      </form>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
 
-      <p className="signup-prompt">
-        Don&apos;t have an account? <Link to="/signup" className="signup-link">Sign up</Link>
-      </p>
+          <div className="form-options">
+            <div className="remember-me">
+              <input type="checkbox" id="remember-me" />
+              <label htmlFor="remember-me"> Remember me</label>
+            </div>
+            <a href="/forgot-password" className="forgot-password">
+              Forgot password?
+            </a>
+          </div>
+
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+
+        <p className="register-text">
+          Don’t have an account? <a href="/register">Register here</a>
+        </p>
+
+        <div className="social-login">
+          <p>Or sign in with:</p>
+          <div className="social-buttons">
+            <button className="social-btn google">Google</button>
+            <button className="social-btn github">GitHub</button>
+            <button className="social-btn facebook">Facebook</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
